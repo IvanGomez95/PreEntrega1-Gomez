@@ -1,4 +1,4 @@
-import { UserServices } from "../services/user.services.js";
+import { UserServices } from "../services/user.service.js";
 
 export class UserControllers {
   constructor() {
@@ -37,7 +37,7 @@ export class UserControllers {
       return res.status(404).send({ status: "error", error: "User not found" });
 
     const result = await this.userServices.update(userId, updateBody);
-    res.send({ status: "success", message: "User updated" });
+    res.status(200).json({ status: "success", message: "User updated", payload: result });
   };
 
   deleteUser = async (req, res) => {

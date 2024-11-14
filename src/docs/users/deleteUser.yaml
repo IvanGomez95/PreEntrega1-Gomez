@@ -1,0 +1,29 @@
+  /api/users/{uid}:
+    delete:
+      summary: Delete a user by ID
+      description: Deletes a specific user by their ID
+      tags:
+        - Users
+      parameters:
+        - in: path
+          name: uid
+          required: true
+          description: User's unique ID (ObjectId)
+          schema:
+            type: string
+      responses:
+        200:
+          description: User successfully deleted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+                  message:
+                    type: string
+                    example: "User has been successfully deleted."
+        404:
+          description: User not found

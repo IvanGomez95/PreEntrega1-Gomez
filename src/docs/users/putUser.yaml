@@ -1,0 +1,31 @@
+  /api/users/{uid}:
+    put:
+      summary: Update a user by ID
+      description: Updates the information of a user based on their ID
+      tags:
+        - Users
+      parameters:
+        - in: path
+          name: uid
+          required: true
+          description: User's unique ID (ObjectId)
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: User data to be updated
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        200:
+          description: Updated user information
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        400:
+          description: Invalid input data
+        404:
+          description: User not found

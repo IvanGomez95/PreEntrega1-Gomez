@@ -1,0 +1,16 @@
+paths: 
+  /api/pets:
+    get: 
+      summary: Obtain all pets
+      description: This must get all pets
+      tags: 
+        - Pets
+      responses: 
+        200:
+          description: Returns pets array   
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Pet"

@@ -42,5 +42,4 @@ export class UserServices {
     await this.userDao.delete(id);
     return "ok";
   }
-
 }

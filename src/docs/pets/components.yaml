@@ -1,0 +1,65 @@
+components:
+  schemas:
+    Pet:  # Cambié de "Pets" a "Pet" porque se está creando un solo recurso.
+      type: object
+      properties:
+        _id: 
+          type: string
+          description: Pet ID (ObjectId)
+        name:
+          type: string
+          description: Pet name
+        specie:
+          type: string
+          description: Pet specie
+        owner:
+          type: string
+          description: Adopter ID (ObjectId)
+        birthDate: 
+          type: string
+          format: date
+          description: Pet birthday (ISO 8601)
+        adopted:
+          type: boolean
+          description: Adopted or not
+        image: 
+          type: string
+          description: Pet avatar URL
+      example:
+        _id: "5fte9f9b5f7e9f9b5f7e9f9b"
+        name: Carlos
+        specie: Palomo
+        adopted: false
+        owner: "5fte9f9b5f7e9f9b5f7e9f9b"
+        image: "https://celebrateurbanbirds.org/es/learn/birds/focal-species/rock-pigeon-2/"
+        birthDate: "1993-12-20"
+
+  requestBodies: # Cambié de "requestBody" a "requestBodies" para mantener la consistencia con OpenAPI
+    petBody:  
+      type: object
+      properties:
+        name:
+          type: string
+          description: Pet name
+        specie:
+          type: string
+          description: Pet specie
+        owner:
+          type: string
+          description: Adopter ID (ObjectId)
+        birthDate: 
+          type: string
+          format: date
+          description: Pet birthday (ISO 8601)
+        adopted:
+          type: boolean
+          description: Adopted or not
+        image: 
+          type: string
+          description: Pet avatar URL
+      example:
+        name: Carlos
+        specie: Palomo
+        adopted: false
+        image: "https://celebrateurbanbirds.org/es/learn/birds/focal-species/rock-pigeon-2/"
+        birthDate: "1993-12-20"

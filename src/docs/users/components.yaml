@@ -1,0 +1,42 @@
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        _id:
+          type: string
+          description: User ID (ObjectId)
+        first_name:
+          type: string
+          description: User's first name
+        last_name:
+          type: string
+          description: User's last name
+        email:
+          type: string
+          description: User's email (must be unique)
+        password:
+          type: string
+          description: User's password (hashed)
+        role:
+          type: string
+          description: Role of the user ("user" is default)
+        pets:
+          type: array
+          items:
+            type: object
+            properties:
+              _id:
+                type: string
+                description: Pet ID (ObjectId)
+      example:
+        _id: "670e08950845e1456d87f709"
+        first_name: "Carlitos"
+        last_name: "Mateo Centeno"
+        email: "Blanca_ResendezdeEspinal12@nearbpo.com"
+        role: "user"
+        pets: [
+          {
+            _id: "670e09c127983bd3a031390f"
+          }
+        ]        

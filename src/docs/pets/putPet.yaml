@@ -1,0 +1,32 @@
+paths: 
+  /api/pets/{pid}:
+    put: 
+      summary: Updates a pet
+      description: This must update a pet
+      tags: 
+        - Pets
+      parameters: 
+        - in: path
+          name: pid
+          required: true
+          description: Pet ID
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Pet data
+        content:
+            application/json:
+              schema:
+                $ref: "#/components/requestBodies/petBody"
+      responses: 
+        200:
+          description: Updated pet
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/requestBodies/petBody"
+        400:
+          description: Invalid input data
+        404:
+          description: User not found        

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { PetsController } from "../controllers/pets.controllers.js";
+import { PetsController } from "../controllers/pets.controller.js";
 import uploader from "../utils/uploader.js";
 
 const petsController = new PetsController();

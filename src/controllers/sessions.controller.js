@@ -1,7 +1,7 @@
 import { createHash, passwordValidation } from "../utils/index.js";
 import jwt from "jsonwebtoken";
 import UserDTO from "../dto/User.dto.js";
-import { UserServices } from "../services/user.services.js";
+import { UserServices } from "../services/user.service.js";
 
 
 export class SessionsController {
@@ -24,7 +24,7 @@ export class SessionsController {
         password: hashedPassword,
       };
       let result = await this.userServices.create(user);
-      res.send({ status: "success", payload: result._id });
+      res.status(201).json({ status: "success", payload: result });
     } catch (error) {
       next(error);
     }

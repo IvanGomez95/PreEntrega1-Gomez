@@ -1,8 +1,8 @@
 import { Router } from "express";
 import { generateUsersMock } from "../mocks/user.mock.js";
-import { UserServices } from "../services/user.services.js";
+import { UserServices } from "../services/user.service.js";
 import { generatePetsMock } from "../mocks/pets.mock.js";
-import { PetServices } from "../services/pet.services.js";
+import { PetServices } from "../services/pet.service.js";
 
 const userServices = new UserServices();
 const petsServices = new PetServices();
